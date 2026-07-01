@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://unpkg.com https://fonts.googleapis.com https://fonts.gstatic.com https://ui-avatars.com 'unsafe-inline' 'unsafe-eval'; img-src * data:;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://unpkg.com https://fonts.googleapis.com https://fonts.gstatic.com https://ui-avatars.com https://translate.google.com https://translate.googleapis.com 'unsafe-inline' 'unsafe-eval'; img-src * data:;">
+    <!-- Web App Manifest (PWA) -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#ea580c">
+    <link rel="apple-touch-icon" href="https://ui-avatars.com/api/?name=DA&background=ea580c&color=fff&size=192">
     <title>माझे डिजिटल कार्ड</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://ui-avatars.com/api/?name=DA&background=ea580c&color=fff&size=32&rounded=true">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,6 +24,10 @@
 <body class="bg-gradient-to-br from-orange-50 to-red-50 min-h-screen flex items-center justify-center p-4" oncontextmenu="return false;">
     <!-- Card Container -->
     <div class="bg-white rounded-3xl shadow-xl w-full max-w-sm overflow-hidden transition-all duration-300 hover:shadow-2xl border border-orange-100">
+        
+        <!-- Google Translate Widget -->
+        <div id="google_translate_element" class="w-full text-center p-2 bg-slate-50 border-b border-slate-100 text-sm flex justify-center"></div>
+
         <!-- Header Banner -->
         <div class="h-32 bg-gradient-to-r from-orange-500 to-red-500 relative"></div>
         
@@ -36,6 +46,11 @@
                     Delivering top-notch Web and AI solutions to scale your business. Let's build something amazing together.
                 </p>
                 
+                <!-- Offer/Discount Banner -->
+                <div class="mt-4 bg-yellow-50 border border-yellow-200 text-yellow-700 p-2.5 rounded-xl font-bold text-sm shadow-sm flex items-center justify-center gap-2">
+                    <span>🔥</span> Special Offer: 10% Off on First Project!
+                </div>
+
                 <!-- Social Links -->
                 <div class="flex justify-center gap-4 mt-5">
                     <a href="#" class="w-10 h-10 rounded-full bg-slate-50 hover:bg-orange-50 flex items-center justify-center text-slate-600 hover:text-orange-600 transition-colors duration-200">
@@ -82,6 +97,20 @@
                     </svg>
                     Share Card
                 </button>
+            </div>
+
+            <!-- Premium Action Buttons -->
+            <div class="flex flex-col gap-3 mt-6">
+                <!-- Map Button -->
+                <a href="https://maps.app.goo.gl/placeholder" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-900 text-white py-3 px-4 rounded-xl font-medium transition-colors duration-200 shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    Visit on Map
+                </a>
+                <!-- UPI Button -->
+                <a href="upi://pay?pa=dnyaneshwar@oksbi&pn=Dnyaneshwar%20Adagale&cu=INR" class="flex items-center justify-center gap-2 bg-purple-600 hover:bg-purple-700 text-white py-3 px-4 rounded-xl font-medium transition-colors duration-200 shadow-sm shadow-purple-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+                    Pay Now (UPI)
+                </a>
             </div>
 
             <!-- Contact Info -->
@@ -173,7 +202,34 @@
                     </button>
                 </div>
             </div>
+
+            <!-- Testimonials -->
+            <div class="mt-8 border-t border-slate-100 pt-6">
+                <h2 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4 text-left">Client Reviews</h2>
+                <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100 relative">
+                    <svg class="absolute top-2 left-2 w-6 h-6 text-slate-200" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                    <p class="text-sm text-slate-600 italic relative z-10 pt-2 pl-4">"Outstanding service and delivered exactly what we needed. Highly recommended!"</p>
+                    <p class="text-xs font-bold text-slate-800 mt-3 text-right">- Rahul K.</p>
+                </div>
+            </div>
+
+            <!-- Copyright/Branding -->
+            <div class="mt-8 text-center text-xs text-slate-400">
+                Created with ❤️ by <span class="font-bold text-slate-600">Dnyaneshwar Digital</span>
+            </div>
         </div>
     </div>
+
+    <!-- Google Translate Script -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'mr,hi,gu,ta,te,kn,bn,pa,ur,en',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
