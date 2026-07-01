@@ -87,3 +87,32 @@ if ('serviceWorker' in navigator) {
     });
   });
 }
+
+// Generate Dynamic QR Code on Load
+window.addEventListener('DOMContentLoaded', () => {
+    const qrImage = document.getElementById('qrImage');
+    if (qrImage) {
+        // Encode the current URL to create the QR code
+        const currentUrl = encodeURIComponent(window.location.href);
+        qrImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${currentUrl}`;
+    }
+});
+
+// 3D Touch/Click Ripple Effect
+document.addEventListener('click', function (e) {
+    // Create ripple element
+    const ripple = document.createElement('div');
+    ripple.classList.add('ripple-touch');
+    
+    // Position ripple exactly where clicked
+    ripple.style.left = `${e.clientX}px`;
+    ripple.style.top = `${e.clientY}px`;
+    
+    // Append to body
+    document.body.appendChild(ripple);
+    
+    // Remove element after animation finishes (0.8s)
+    setTimeout(() => {
+        ripple.remove();
+    }, 800);
+});
