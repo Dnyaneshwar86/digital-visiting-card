@@ -1,0 +1,17 @@
+/* Custom Styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    /* Prevent text selection to improve security feel */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Prevent image dragging */
+img {
+    -webkit-user-drag: none;
+    pointer-events: none;
+}
