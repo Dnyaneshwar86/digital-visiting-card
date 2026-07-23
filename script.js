@@ -44,11 +44,11 @@ function sendWhatsAppRequest() {
     message += `\nPlease let me know how we can proceed further.`;
 
     const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/917507093235?text=${encodedMessage}`, '_blank', 'noopener,noreferrer');
+    window.open(`https://wa.me/919370983235?text=${encodedMessage}`, '_blank', 'noopener,noreferrer');
 }
 
 function downloadVCard() {
-    const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:DNYANESHWAR ADAGALE\nTITLE:Professional Web & AI Solutions\nTEL;TYPE=WORK,VOICE:+917507093235\nEMAIL:contact@example.com\nURL:https://www.example.com\nADR;TYPE=WORK:;;Maharashtra;India\nEND:VCARD`;
+    const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:DNYANESHWAR ADAGALE\nTITLE:Professional Web & AI Solutions\nTEL;TYPE=WORK,VOICE:+919370983235\nEMAIL:hello@worldfolio.x\nURL:https://dnyaneshwar86.github.io/digital-visiting-card/\nADR;TYPE=WORK:;;Maharashtra;India\nEND:VCARD`;
     const blob = new Blob([vcard], { type: "text/vcard" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
